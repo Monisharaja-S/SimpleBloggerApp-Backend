@@ -124,7 +124,7 @@ export const deleteStory = async (req, res) => {
     const storyId = req.params.id;
 
     // Find the story by ID and delete it
-    const deletedStory = await Story.findByIdAndRemove(storyId);
+    const deletedStory = await Story.findByIdAndDelete(storyId);
 
     if (!deletedStory) {
       return res.status(404).json({
