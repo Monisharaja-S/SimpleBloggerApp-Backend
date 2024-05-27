@@ -139,7 +139,10 @@ export const deleteStory = async (req, res) => {
       success: true,
     });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "Internal Server Error" });
-  }
+    console.error('Error deleting story:', error);
+    return res.status(500).json({
+      message: "Internal Server Error",
+      success: false,
+      error: error.message, // Provide more details about the error
+    });}
 };
