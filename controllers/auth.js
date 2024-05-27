@@ -46,12 +46,17 @@ const register = async (req, res) => {
     // HTML content for the activation email
     const htmlContent = `
         <p>Hello ${user.firstName},</p>
-        <p>Thank you for registering with Aspire Kaleidoscope. To activate your account, click the button below:</p>
+        <p>Thank you for registering. To complete your registration and start enjoying all the features and benefits of your new account, please activate it by clicking the button below:</p>
         <a href="${activationLink}">
-        <button style="padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        <button style="padding: 10px; background-color: #584caf; color: white; border: none; border-radius: 5px; cursor: pointer;">
             Activate Your Account
         </button>
         </a>
+
+        <p>If you have any questions or need further assistance, feel free to contact our support team <p>.
+
+        <p>Best Regards<p>
+        <p>Sales Team<p>
         `;
 
     // Send the email with the activation link
@@ -145,12 +150,17 @@ const forgotPassword = async (req, res, next) => {
     // HTML content for the email
     const htmlContent = `
         <p>Hello ${user.firstName},</p>
-        <p>You have requested to reset your password. Click the button below to reset it:</p>
+        <p>We received a request to reset your password for your account associated with this email address.<p>
+        <p>If you did not make this request, please ignore this email. Otherwise, you can reset your password by clicking on the button below :</p>
         <a href="${resetLink}">
-          <button style="padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+          <button style="padding: 10px; background-color: #584caf; color: white; border: none; border-radius: 5px; cursor: pointer;">
             Reset Your Password
           </button>
         </a>
+        <p>If you have any questions or need further assistance, feel free to contact our support team <p>.
+
+        <p>Best Regards<p>
+        <p>Sales Team<p>
       `;
 
     // Send the email with the password reset link
