@@ -19,7 +19,7 @@ export const addStory = async (req, res) => {
       content,
       image:
         image ||
-        "https://thersilentboy.com/wp-content/uploads/2022/09/Blogging.jpeg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm1JyKxEOb1sPBmk6CzNMLikaCMyvcOyI9pQ&s",
     });
 
     // Save the new story to the database
