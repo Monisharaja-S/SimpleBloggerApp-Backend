@@ -19,7 +19,7 @@ export const addStory = async (req, res) => {
       content,
       image:
         image ||
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm1JyKxEOb1sPBmk6CzNMLikaCMyvcOyI9pQ&s",
+        "https://media.istockphoto.com/id/626669886/photo/blogging-blog-word-coder-coding-using-laptop.jpg?b=1&s=612x612&w=0&k=20&c=8HDuXvPTUz9oS7J5vnH2CxBpKs6KM0oFqPaxTkl5Kcw=",
     });
 
     // Save the new story to the database
