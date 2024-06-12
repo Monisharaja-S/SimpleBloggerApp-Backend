@@ -14,7 +14,6 @@ import {
 } from "../utils/user.js";
 
 const getPrivateData = (req, res) => {
-  console.log(req.user);
   return res.status(200).json({
     success: true,
     message: "You got access to the private data in this route",
@@ -67,7 +66,6 @@ const register = async (req, res) => {
       activationToken: activationToken,
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal Server" });
   }
 };
@@ -76,7 +74,6 @@ const activateUser = async (req, res) => {
   try {
     // Find the user with the given activation token
     const user = await getUserByActivationToken(req);
-    console.log(user);
     if (!user) {
       return res.status(400).json({ error: "Invalid activation token!" });
     }
@@ -90,7 +87,6 @@ const activateUser = async (req, res) => {
       message: "Account activated successfully",
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal Server" });
   }
 };
@@ -122,7 +118,6 @@ const login = async (req, res) => {
     // Respond with a success message and the token
     res.status(200).json({ message: "Login successful", token, userName });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal Server" });
   }
 };
@@ -171,7 +166,6 @@ const forgotPassword = async (req, res, next) => {
       resetToken: resetToken,
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
@@ -192,7 +186,6 @@ const verifyRandomString = async (req, res, next) => {
 
     res.status(200).json({ message: "Random String Verified" });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
@@ -224,7 +217,6 @@ const resetpassword = async (req, res, next) => {
 
     res.status(200).json({ message: "Password reset successful" });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };

@@ -7,8 +7,7 @@ const deleteImageFile = async (deleteImage) => {
   const filePath = path.join(rootDir, `/public/storyImages/${deleteImage}`);
 
   try {
-    await fs.unlink(filePath); // Use fs.promises.unlink for asynchronous file deletion
-    console.log("File deleted");
+    await fs.unlink(filePath); // Use fs.promises.unlink for asynchronous file deletion;
   } catch (error) {
     console.error("Error deleting file:", error);
   }

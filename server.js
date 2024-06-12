@@ -39,5 +39,4 @@ app.use("/api", indexRoutes);
 
 //Listening the Server
 app.listen(PORT, () => {
-  console.log(`Server Started in localhost:${PORT}`);
 });

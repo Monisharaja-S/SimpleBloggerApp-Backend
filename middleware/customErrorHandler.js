@@ -25,8 +25,6 @@ const customErrorHandler = (err, req, res, next) => {
     err = new CustomError("JWT token is malformed", 401);
   }
 
-  console.log("Custom Error Handler =>", err.name, err.message, err.statusCode);
-
   return res.status(err.statusCode || 500).json({
     success: false,
     error: err.message || "Server Error",
